@@ -1,0 +1,70 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Currency Converter</title>
+	<style>
+		body{
+			color: 	#ffffff;
+		}
+		#box{
+			width: 600px;
+			height: 180px;
+			margin: 0px auto;
+			border:2px solid red;
+			
+		}
+		h2{
+			text-align: center;
+			color: rgb(59,100,200);
+		}
+		table{
+			margin: 0px auto;
+		}
+		td{
+			color: black;
+		}
+	</style>
+</head>
+<body bgcolor="#E6E6FA">
+	<div id="box">
+		<h2>Currency Convertor</h2>
+	<form name="converter" align="center">
+		<table border="0">
+			<tr>
+				<td>Indian:</td>
+				<td><input type="text" name="rupees" onChange="indianConverter()" size="15"/></td>
+			</tr>
+			<tr>
+				<td>US Dollar:</td>
+				<td><input type="text" name="dollar" onChange="usdConverter()" size="15"/></td>
+			</tr>
+			<tr>
+				<td>British Pound:</td><td><input type="text" name="pounds" onChange="poundConverter()"size="15"/></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="button" value="Convert!"/></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	<script language="JavaScript">
+	<!--
+	
+		function  indianConverter(){
+			document.converter.dollar.value = document.converter.rupees.value * 0.02
+			document.converter.pounds.value = document.converter.rupees.value * 0.011
+		}
+		function  usdConverter(){
+			document.converter.rupees.value = document.converter.dollar.value * 63.93
+			document.converter.pounds.value = document.converter.dollar.value * 0.71
+		}
+		function  poundConverter(){
+			document.converter.dollar.value = document.converter.pounds.value * 1.40
+			document.converter.rupees.value = document.converter.pounds.value * 89.61
+		}
+		//-->
+	</script>
+	
+</body>
+
+</html>
