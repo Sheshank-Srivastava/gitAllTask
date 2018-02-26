@@ -1,0 +1,55 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Currency Converter</title>
+	<style>
+		body{
+			color: 	#ffffff;
+		}
+		#box{
+			width: 600px;
+			height: 180px;
+			margin: 0px auto;
+			border:2px solid red;
+			
+		}
+		h2{
+			text-align: center;
+			color: rgb(59,100,200);
+		}
+		table{
+			margin: 0px auto;
+		}
+		td{
+			color: black;
+		}
+	</style>
+</head>
+<body bgcolor="#E6E6FA">
+	<div id="box">
+		<h2>Currency Convertor</h2>
+	<form id="converter" align="center">
+		<table border="0">
+			<tr>
+				<td>Indian:</td>
+				<td><input type="text" id="rupees" onChange="indianConverter()" size="15"/></td>
+			</tr>
+			<tr>
+				<td>US Dollar:</td>
+				<td><input type="text" id="dollar" onChange="usdConverter()" size="15"/></td>
+			</tr>
+			<tr>
+				<td>British Pound:</td><td><input type="text" id="pounds" onChange="poundConverter()"size="15"/></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="button" value="Convert!"/></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	<script type="text/javascript" src="currency.js">
+	</script>
+	
+</body>
+
+</html>
