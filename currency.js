@@ -1,46 +1,50 @@
 function  indianConverter(){
-	iu();
-	ib();
+	inrToUsdConvert();
+	inrToPoundConvert();
 }
 function  usdConverter(){
-	ui();
-	ub();
+	usdToInrConverter();
+	usdToPoundConverter();
 }
 function  poundConverter(){
-	bu();
-	bi();
+	poundToUsdConverter();
+	poundToInrConverter();
 }
 //function is use to convert rupees into us dollar
-function iu(){
+function inrToUsdConvert(){
 	var xhttp= new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			var obj =JSON.parse(this.responseText);
-			var ir = 0.0;
-			var updat=0.0;
-			ir=document.getElementById('rupees').value;
-			updat=obj.rates.USD;
-			var cur=0.0;
-			cur =ir*updat;
-			document.getElementById('dollar').value = cur;		 
+			var apiData =JSON.parse(this.responseText);
+			var rupeeData = 0.0;
+			var newValue=0.0;
+			var updateAmount=0.0;
+
+			rupeeData=document.getElementById('rupees').value;
+			newValue=apiData.rates.USD;
+			updateAmount =rupeeData * newValue;
+			
+			document.getElementById('dollar').value = updateAmount;		 
 		}
 	};
 	xhttp.open("GET",'https://api.fixer.io/latest?base=INR&symbols=USD',true);
 	xhttp.send();
 }
-//function is use to convert rupees into us pounds
-function ib(){
+//function is use to convert rupees into pounds
+function inrToPoundConvert(){
 	var xhttp= new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			var obj =JSON.parse(this.responseText);
-			var ir = 0.0;
-			var updat=0.0;
-			ir=document.getElementById('rupees').value;
-			updat=obj.rates.GBP;
-			var cur=0.0;
-			cur =ir*updat;
-			document.getElementById('pounds').value = cur;	
+			var apiData =JSON.parse(this.responseText);
+			var indianData = 0.0;
+			var newValue=0.0;
+			var updateAmount = 0.0;
+
+			indianData=document.getElementById('rupees').value;
+			newValue = apiData.rates.GBP;
+			updateAmount = indianData * newValue;
+			
+			document.getElementById('pounds').value = updateAmount;	
 			
 		}
 	};
@@ -49,36 +53,40 @@ function ib(){
 }
 //function is use to convert US dollar to pounds
 
-function ub(){
+function usdToPoundConverter(){
 	var xhttp= new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-		var obj =JSON.parse(this.responseText);
-			var ir = 0.0;
-			var updat=0.0;
-			ir=document.getElementById('dollar').value;
-			updat=obj.rates.GBP;
-			var cur=0.0;
-			cur =ir*updat;
-			document.getElementById('pounds').value = cur;	
+			var apiData =JSON.parse(this.responseText);
+			var dollarData = 0.0;
+			var newValue = 0.0;
+			var updateAmount = 0.0;
+
+			dollarData = document.getElementById('dollar').value;
+			newValue = apiData.rates.GBP;
+			updateAmount = dollarData*newValue;
+			
+			document.getElementById('pounds').value = updateAmount;	
 		}
 	};
 	xhttp.open("GET",'https://api.fixer.io/latest?base=USD&symbols=GBP',true);
 	xhttp.send();
 }
 //function is use to convert US dollar to rupees
-function ui(){
+function usdToInrConverter(){
 	var xhttp= new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			var obj =JSON.parse(this.responseText);
-			var ir = 0.0;
-			var updat=0.0;
-			ir=document.getElementById('dollar').value;
-			updat=obj.rates.INR;
-			var cur=0.0;
-			cur =ir*updat;
-			document.getElementById('rupees').value = cur;	
+			var apiData =JSON.parse(this.responseText);
+			var dollarData = 0.0;
+			var newValue=0.0;
+			var updateAmount=0.0;
+			
+			dollarData=document.getElementById('dollar').value;
+			newValue=apiData.rates.INR;
+			updateAmount =dollarData*newValue;
+			
+			document.getElementById('rupees').value = updateAmount;	
 			
 		}
 	};
@@ -86,36 +94,40 @@ function ui(){
 	xhttp.send();
 }
 //function is use to convert pounds into rupees
-function bi(){
+function poundToInrConverter(){
 	var xhttp= new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			var obj =JSON.parse(this.responseText);
-			var ir = 0.0;
-			var updat=0.0;
-			ir=document.getElementById('pounds').value;
-			updat=obj.rates.INR;
-			var cur=0.0;
-			cur =ir*updat;
-			document.getElementById('rupees').value = cur;	
+			var apiData =JSON.parse(this.responseText);
+			var poundData = 0.0;
+			var newValue=0.0;
+			var updateAmount=0.0;
+
+			poundData=document.getElementById('pounds').value;
+			newValue=apiData.rates.INR;
+			updateAmount =poundData*newValue;
+			
+			document.getElementById('rupees').value = updateAmount;	
 		}
 	};
 	xhttp.open("GET",'https://api.fixer.io/latest?base=GBP&symbols=INR',true);
 	xhttp.send();
 }
 //function is use to convert pounds  into US dollar
-function bu(){
+function poundToUsdConverter(){
 	var xhttp= new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
-			var obj =JSON.parse(this.responseText);
-			var ir = 0.0;
-			var updat=0.0;
-			ir=document.getElementById('pounds').value;
-			updat=obj.rates.USD;
-			var cur=0.0;
-			cur =ir*updat;
-			document.getElementById('dollar').value = cur;	
+			var apiData =JSON.parse(this.responseText);
+			var poundData = 0.0;
+			var newValue=0.0;
+			var updateAmount=0.0;
+
+			poundData=document.getElementById('pounds').value;
+			newValue=apiData.rates.USD;
+			updateAmount =poundData*newValue;
+			
+			document.getElementById('dollar').value = updateAmount;	
 		}
 	};
 	xhttp.open("GET",'https://api.fixer.io/latest?base=GBP&symbols=USD',true);
